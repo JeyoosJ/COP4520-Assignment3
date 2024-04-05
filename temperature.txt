@@ -1,0 +1,5 @@
+The use of multiple threads allow us to collect temperature readings from multiple sensor concurrently. By distributing the workload among threads, we are able to reduce the overall execution time.
+We use mutexes for synchronization to ensure that shared resourcse are accessed safely by multiple threads, preventing data corruption and race conditions.
+The program correctly and acurately collects temperature readings from sensors, calculates top 5 highest and lowest temperatures for each hour. I verified the output using small values and printing out each reading to calculate manually.
+Regarding progress guarantee, the program ensures that all threads complete their tasks and terminate successfully. The use of mutexes for synchronization guarantees progress by preventing deadlocks and ensuring that threads can access shared resources when needed. 
+Each thread performs its designated task efficiently, contributing to the overall progress of the program. Thus, users can rely on the program to consistently generate reports at the end of each hour, providing timely and valuable insights into atmospheric temperature trends on Mars.
