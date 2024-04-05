@@ -1,0 +1,11 @@
+What went wrong in the initial plan of action could have been that there might have been confusions among the servants when they were trying to add and remove presents at the same time. There was also no clear structure as to who was doing what. 
+The more the number of presents, the longer it takes to find the right spot and add a gift. Even though deleting would take the same time if we are always popping from the head, adding would be the most time consuming if we waited to add all the gifts before removing them.
+
+This is why we are adding and removing gifts at the same time randomly.     
+
+In this code, the 4 threads are randomly assigned to add or delete presents. To speed up execution, if the list is empty the thread is always told to add to list.
+There are also checks to ensure that all gifts are processed in random order which would be the case when grabbing gifts from a list.
+
+To ensure correctness, I verified the output with small values to ensure that all the presents were inserted into the list. Then I checked the counter of thankyounotes to ensure that the counter's ending value = total_presents.
+
+Each method that modifies the list such as adding and removing is synchronized using mutex locks to prevent race conditions.
